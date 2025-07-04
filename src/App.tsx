@@ -11,6 +11,7 @@ import ScrollToTop from "./components/ScrollToTop";
 const Tutorial = React.lazy(() => import('./pages/Tutorial'));
 const Notices = React.lazy(() => import('./pages/Notices'));
 const Admin = React.lazy(() => import('./pages/Admin'));
+const AdminDownloads = React.lazy(() => import('./pages/AdminDownloads'));
 const Download = React.lazy(() => import('./pages/Download'));
 const queryClient = new QueryClient();
 
@@ -24,26 +25,46 @@ const App = () => (
           <Sonner />
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/tutorial" element={
-              <React.Suspense fallback={<div>Loading...</div>}>
-                <Tutorial />
-              </React.Suspense>
-            } />
-            <Route path="/notices" element={
-              <React.Suspense fallback={<div>Loading...</div>}>
-                <Notices />
-              </React.Suspense>
-            } />
-            <Route path="/admin" element={
-              <React.Suspense fallback={<div>Loading...</div>}>
-                <Admin />
-              </React.Suspense>
-            } />
-            <Route path="/download" element={
-              <React.Suspense fallback={<div>Loading...</div>}>
-                <Download />
-              </React.Suspense>
-            } />
+            <Route
+              path="/tutorial"
+              element={
+                <React.Suspense fallback={<div>Loading...</div>}>
+                  <Tutorial />
+                </React.Suspense>
+              }
+            />
+            <Route
+              path="/notices"
+              element={
+                <React.Suspense fallback={<div>Loading...</div>}>
+                  <Notices />
+                </React.Suspense>
+              }
+            />
+            <Route
+              path="/admin"
+              element={
+                <React.Suspense fallback={<div>Loading...</div>}>
+                  <Admin />
+                </React.Suspense>
+              }
+            />
+            <Route
+              path="/admin/downloads"
+              element={
+                <React.Suspense fallback={<div>Loading...</div>}>
+                  <AdminDownloads />
+                </React.Suspense>
+              }
+            />
+            <Route
+              path="/download"
+              element={
+                <React.Suspense fallback={<div>Loading...</div>}>
+                  <Download />
+                </React.Suspense>
+              }
+            />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
