@@ -53,6 +53,45 @@ const DownloadPage = () => {
     return match ? match[0] : '';
   };
 
+  // 判断是否为外部链接
+  const isExternalLink = (url: string): boolean => {
+    // 检查是否为网页链接(不是直接指向下载文件的URL)
+    const webExtensions = ['.html', '.htm', '.asp', '.php', '.jsp'];
+    const isWebLink =
+      url.startsWith('http') &&
+      !webExtensions.some((ext) => url.toLowerCase().includes(ext)) &&
+      !url.toLowerCase().includes('download=') &&
+      !url.toLowerCase().includes('attachment=');
+
+    // 返回是否需要在新窗口打开而非下载
+    return !url.includes('supabase') && isWebLink;
+  };
+
+  // 获取正确的下载URL
+  const getDownloadUrl = (filePath: string): string => {
+    // 如果是完整URL，直接返回
+    if (filePath.startsWith('http://') || filePath.startsWith('https://')) {
+      return filePath;
+    }
+    // 否则通过Supabase获取URL
+    return getFileUrl(filePath);
+  };
+
+  // 处理下载链接点击
+  const handleDownloadClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    software: DownloadFile
+  ) => {
+    const fileUrl = getDownloadUrl(software.file_path);
+
+    // 如果是外部链接，在新窗口打开
+    if (isExternalLink(fileUrl)) {
+      e.preventDefault(); // 阻止默认下载行为
+      window.open(fileUrl, '_blank');
+    }
+    // 否则继续默认的下载行为，会使用a标签的download属性指定的文件名
+  };
+
   const renderSoftwareDetail = (software: DownloadFile) => (
     <div className="min-h-screen bg-black">
       <Header />
@@ -156,11 +195,14 @@ const DownloadPage = () => {
                 <div className="text-gray-400">版本 {software.version}</div>
               </div>
               <a
-                href={getFileUrl(software.file_path)}
+                href={getDownloadUrl(software.file_path)}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-lg hover:shadow-lg hover:shadow-indigo-500/30 transition-all duration-300"
-                download={`${software.name}${getFileExtension(
-                  software.file_path
-                )}`}
+                download={
+                  isExternalLink(getDownloadUrl(software.file_path))
+                    ? undefined
+                    : `${software.name}${getFileExtension(software.file_path)}`
+                }
+                onClick={(e) => handleDownloadClick(e, software)}
               >
                 <Download className="h-5 w-5" />
                 立即下载
