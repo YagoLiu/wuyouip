@@ -16,16 +16,32 @@ const Footer: React.FC = () => {
           <div className="mb-4 md:mb-0">
             <div className="flex items-center justify-center md:justify-start space-x-4 text-gray-500 flex-wrap">
               <span>友情链接:</span>
-              <a href="#" className="hover:text-blue-400 transition-colors">
-                雷电模拟器
+              <a
+                href="https://bdm.kk8y.com"
+                className="hover:text-blue-400 transition-colors"
+              >
+                佰达梦货源站
               </a>
               <span>|</span>
-              <a href="#" className="hover:text-blue-400 transition-colors">
-                向日葵远程控制
+              <a
+                href="https://user.benfuip.com/main/register?aff=95013885"
+                className="hover:text-blue-400 transition-colors"
+              >
+                奔富加速器
               </a>
               <span>|</span>
-              <a href="#" className="hover:text-blue-400 transition-colors">
-                todesk远程控制
+              <a
+                href="http://api.liangziip.com:1234/reg/index.php?code=800106611"
+                className="hover:text-blue-400 transition-colors"
+              >
+                量子加速器
+              </a>
+              <span>|</span>
+              <a
+                href="baidameng.ysepan.com"
+                className="hover:text-blue-400 transition-colors"
+              >
+                佰达梦软件下载网盘
               </a>
             </div>
           </div>
