@@ -43,6 +43,13 @@ const Footer: React.FC = () => {
               >
                 佰达梦软件下载网盘
               </a>
+              <span>|</span>
+              <a
+                href="https://www.wuyouip.com"
+                className="hover:text-blue-400 transition-colors"
+              >
+                无忧IP官网
+              </a>
             </div>
           </div>
 
@@ -51,7 +58,7 @@ const Footer: React.FC = () => {
             <div className="relative overflow-hidden rounded-lg bg-gradient-to-r from-blue-500/20 to-indigo-500/20 p-0.5">
               <div className="bg-gray-900 rounded-lg px-4 py-2">
                 <img
-                  src="/kefu.png"
+                  src="/kefu.jpg"
                   alt="客服二维码"
                   className="h-24 w-24 object-cover"
                 />
@@ -103,6 +110,7 @@ const Footer: React.FC = () => {
             </a>
           </p>
           <p className="text-gray-600">© 2023-2024 无忧IP. 保留所有权利</p>
+          <p className="text-gray-600">本网站为无忧IP品牌授权客户经理运营，非品牌官方网站</p>
         </div>
       </div>
     </footer>

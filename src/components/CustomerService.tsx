@@ -6,7 +6,7 @@ const CustomerService = () => {
     <>
       {/* 在线客服按钮 */}
       <a
-        href="https://wpa1.qq.com/I7v4oCfk?_type=wpa&qidian=true"
+        href="https://work.weixin.qq.com/kfid/kfc82b5dbc3f411d06d"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed left-8 bottom-8 z-50 group"
