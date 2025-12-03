@@ -7,7 +7,7 @@ const Header: React.FC = () => {
       <div className="container mx-auto flex justify-between items-center py-4 px-4">
         <div className="flex items-center">
           <img src="/logo2.jpg" alt="无忧IP" className="h-10 rounded-lg shadow-lg" style={{width: 'auto'}} />
-          <h1 className="text-xl font-bold ml-3 text-white">无忧IP</h1>
+          {/* <h1 className="text-xl font-bold ml-3 text-white">无忧IP</h1> */}
         </div>
         
         <div className="flex items-center space-x-6">
