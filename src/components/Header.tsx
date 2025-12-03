@@ -6,7 +6,7 @@ const Header: React.FC = () => {
     <header className="bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 backdrop-blur-md bg-opacity-90 top-0 w-full z-50 fixed">
       <div className="container mx-auto flex justify-between items-center py-4 px-4">
         <div className="flex items-center">
-          <img src="/logo2.jpg" alt="无忧IP" className="h-10 rounded-lg shadow-lg" style={{width: 'auto'}} />
+          <img src="/logo3.png" alt="无忧IP" className="h-10 rounded-lg shadow-lg" style={{width: 'auto'}} />
           {/* <h1 className="text-xl font-bold ml-3 text-white">无忧IP</h1> */}
         </div>
         

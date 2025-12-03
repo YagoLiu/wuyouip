@@ -18,7 +18,7 @@ const CallToActionSection: React.FC = () => {
             立即注册开始
           </button>
           <button 
-            onClick={() => window.open('https://wpa1.qq.com/I7v4oCfk?_type=wpa&qidian=true', '_blank')}
+            onClick={() => window.open('https://work.weixin.qq.com/kfid/kfc82b5dbc3f411d06d', '_blank')}
             className="px-6 py-3 bg-gray-800 text-white font-medium rounded-xl border border-indigo-500/20 hover:bg-gray-700 transition-colors duration-300 w-full md:w-auto"
           >
             联系客服咨询
